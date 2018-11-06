@@ -1,3 +1,45 @@
+body {
+  font-family: BrandonText, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  height: 5000px;
+}
+.MotherContainer {
+  min-height: 100%;
+  display: block;
+  position: relative;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.components {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: calc(-1 * 48px);
+}
+aside {
+  width: 320px;
+  margin: 5rem 0 0 1rem;
+  display: block;
+  font-family: BrandonText, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  -webkit-box-direction: reverse;
+  -webkit-font-smoothing: antialiased;
+}
+.mainarticle {
+  width: 700px;
+  margin: 5rem 1rem 0 0;
+  display: block;
+}
 /* .entryContainer {
   width: 100%;
   display: block;
@@ -22,10 +64,6 @@
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-size: 14px;
-}
-.MotherContainer {
-  padding-left: 150px;
-  padding-right: 150px;
 }
 .OtherComponents {
   height: 800px;
@@ -197,3 +235,5 @@
     text-align: left;
   }
 } */
+
+/* background-color: #f1f2f4; grey color */
