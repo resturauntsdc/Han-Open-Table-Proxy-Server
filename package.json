@@ -19,5 +19,8 @@
     "nodemon": "^1.18.5",
     "path": "^0.12.7",
     "style-loader": "^0.23.1"
+  },
+  "dependencies": {
+    "express-http-proxy": "^1.5.0"
   }
 }

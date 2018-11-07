@@ -1,5 +1,5 @@
 const express = require("express");
-const proxy = require("http-proxy-middleware");
+const proxy = require("express-http-proxy");
 const path = require("path");
 const parser = require("body-parser");
 const cors = require("cors");
@@ -21,11 +21,11 @@ app.use(
   proxy({ target: "http://127.0.0.1:3001/", changeOrigin: true })
 );
 app.use(
-  "/restaurants/:restaurantID/special",
+  "/restaurants/:restaurantID/menu/special",
   proxy({ target: "http://127.0.0.1:3001/", changeOrigin: true })
 );
 app.use(
-  "/restaurants/:restaurantID/menuCount",
+  "/restaurants/:restaurantID/menu/menuCount",
   proxy({ target: "http://127.0.0.1:3001/", changeOrigin: true })
 );
 
@@ -33,11 +33,11 @@ app.get("/restaurants/:restaurantID/menu/:menu", function(req, res) {
   const menuPath = path.join(__dirname, "./public/index.html");
   res.sendFile(menuPath);
 });
-app.get("/restaurants/:restaurantID/special", function(req, res) {
+app.get("/restaurants/:restaurantID/menu/special", function(req, res) {
   const menuPath = path.join(__dirname, "./public/index.html");
   res.sendFile(menuPath);
 });
-app.get("/restaurants/:restaurantID/menuCount", function(req, res) {
+app.get("/restaurants/:restaurantID/menu/menuCount", function(req, res) {
   const menuPath = path.join(__dirname, "./public/index.html");
   res.sendFile(menuPath);
 });
@@ -90,12 +90,6 @@ app.get("/restaurants/:restaurantid/reviewsummary", function(req, res) {
   const reviews = path.join(__dirname, "./public/index.html");
   res.sendFile(reviews);
 });
-
-//shouldn't this come first?
-
-// app.use("api/restaurants/:restaurantid/reviewsummary", proxy(reviewsummary));
-
-// app.use("api//restaurants/:restaurantid/reviews", proxy(reviews));
 
 app.listen(3000, () => {
   console.log("listening on port 3000");
