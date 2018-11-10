@@ -51,14 +51,14 @@ app.get("/restaurants/:restaurantID/menu/menuCount", function(req, res) {
 //   res.sendFile(overview);
 // });
 
-// app.use(
-//   "/restaurants/:restaurantID/reservations",
-//   proxy({ target: "http://127.0.0.1:3003/", changeOrigin: true })
-// );
-// app.get("/restaurants/:restaurantID/reservations", function(req, res) {
-//   const reservations = path.join(__dirname, "./public/index.html");
-//   res.sendFile(reservations);
-// });
+app.use(
+  "/restaurants/:restaurantID/reservations",
+  proxy({ target: "http://3.16.136.151/", changeOrigin: true })
+);
+app.get("/restaurants/:restaurantID/reservations", function(req, res) {
+  const reservations = path.join(__dirname, "./public/index.html");
+  res.sendFile(reservations);
+});
 
 // app.use(
 //   "/restaurants/:rest_id/gallery",
